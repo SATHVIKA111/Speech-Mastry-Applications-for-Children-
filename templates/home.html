@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Mastery Application</title>
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #50C878;
+            --accent-color: #FF6B6B;
+            --background-color: #F5F7FA;
+            --text-color: #2C3E50;
+            --heading-color: #1A365D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #F5F7FA 0%, #E4EfF9 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-color);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Decorative background elements */
+        .background-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary-color);
+            top: -150px;
+            right: -150px;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--secondary-color);
+            bottom: -100px;
+            left: -100px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: var(--heading-color);
+            margin-bottom: 20px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            color: var(--text-color);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .btn-container {
+            margin-top: 40px;
+            animation: fadeIn 1s ease-out 0.9s both;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+            background: #357ABD;
+        }
+
+        /* Speech bubble animation */
+        .speech-bubble {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            opacity: 0;
+            animation: floatBubble 3s infinite;
+        }
+
+        @keyframes floatBubble {
+            0% { transform: translateY(0) scale(1); opacity: 0; }
+            50% { transform: translateY(-100px) scale(1.2); opacity: 0.6; }
+            100% { transform: translateY(-200px) scale(1); opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .features { grid-template-columns: 1fr; }
+            .feature-card { margin: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background shapes -->
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+
+    <header>
+        <h1>Welcome to Speech Mastery</h1>
+        <p class="tagline">Transform your speaking skills with advanced AI analysis. Get instant feedback on emotion, grammar, and speaking patterns to become a more confident and effective communicator.</p>
+    </header>
+
+    <main>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Speech Analysis</h3>
+                <p>Get detailed insights about your speaking patterns, pauses, and pace.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎭</div>
+                <h3>Emotion Detection</h3>
+                <p>Understand the emotional tone of your speech with AI-powered analysis.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✍️</div>
+                <h3>Grammar Check</h3>
+                <p>Receive instant grammar and language improvement suggestions.</p>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <a href="{{ url_for('upload_file') }}" class="btn">Start Analyzing Your Speech</a>
+        </div>
+    </main>
+
+    <!-- Animated speech bubbles -->
+    <script>
+        function createBubbles() {
+            const bubbleEmojis = ['💭', '🗨️', '💬'];
+            const container = document.body;
+            
+            setInterval(() => {
+                const bubble = document.createElement('div');
+                bubble.className = 'speech-bubble';
+                bubble.style.left = Math.random() * 100 + 'vw';
+                bubble.style.bottom = '0';
+                bubble.textContent = bubbleEmojis[Math.floor(Math.random() * bubbleEmojis.length)];
+                container.appendChild(bubble);
+                
+                setTimeout(() => {
+                    bubble.remove();
+                }, 3000);
+            }, 2000);
+        }
+
+        createBubbles();
+    </script>
+</body>
+</html>
+Last edited just now
