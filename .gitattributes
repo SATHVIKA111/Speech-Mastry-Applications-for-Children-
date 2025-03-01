@@ -1,0 +1,3 @@
+*.py linguist-detectable=true
+templates/*.html linguist-detectable=false
+static/*.css linguist-detectable=false
